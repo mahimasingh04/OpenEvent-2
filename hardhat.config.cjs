@@ -8,11 +8,14 @@ module.exports = {
     artifacts: './artifacts', // Changed from './src/artifacts' to standard Hardhat path
     sources: "./contracts",
     cache: "./cache",
+    
   },
   networks: {
     hardhat: {
       chainId: 1337
     },
+
+    
     // Add other networks as needed
     // goerli: {
     //   url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,

@@ -4,13 +4,13 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-
+import "../lib/openzeppelin/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 /**
  * @title EventRegistration
  * @dev Contract for managing event registrations and issuing NFT tickets
  */
-contract EventRegistration is ERC721, Ownable {
+contract EventRegistration is  ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
@@ -39,7 +39,7 @@ contract EventRegistration is ERC721, Ownable {
     event TicketPurchased(uint256 eventId, address buyer, uint256 tokenId);
     event EventCancelled(uint256 eventId);
 
-    constructor() ERC721("EventTicket", "EVTX") Ownable(msg.sender) {}
+       constructor() ERC721("EventTicket", "EVTX") Ownable(msg.sender){}
 
     /**
      * @dev Creates a new event
