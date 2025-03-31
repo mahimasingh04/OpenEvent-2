@@ -19,6 +19,18 @@ export interface PastEvent {
   achievement?: string;
 }
 
+export interface Badge{
+  id : string,
+  name :  string,
+  description: string,
+  imageURL : string,
+  criteria : string,
+  isAchieved : boolean,
+  dateAchieved : Date,
+  eventId: string,
+  eventName : string,
+  
+}
 // Mock storage for user profiles
 const userProfiles: Record<string, UserProfile> = {};
 
